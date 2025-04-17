@@ -1,0 +1,66 @@
+﻿<Window x:Class="ProgramacaoIV.Exercicios.Janelas.ExercicioQuatro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgramacaoIV.Exercicios.Janelas"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="ExercicioQuatro" Height="450" Width="450">
+    
+   
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"   />
+            <RowDefinition Height="50"   />
+            <RowDefinition Height="*"   />
+            <RowDefinition Height="*"   />
+
+        </Grid.RowDefinitions>
+
+
+        <materialDesign:AutoSuggestBox
+            Grid.Row="1"
+            x:Name="txtIdade"
+            Width="220"
+            materialDesign:HintAssist.Hint="Digite Sua Idade"
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            DropDownElevation="Dp0"
+            Style="{StaticResource MaterialDesignOutlinedAutoSuggestBox}"
+            Suggestions="{Binding AutoSuggestBox2Suggestions}"
+            Text="{Binding AutoSuggestBox2Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+            ValueMember="Key"
+         >
+            <materialDesign:AutoSuggestBox.ItemTemplate>
+                <DataTemplate
+     >
+                    <DockPanel>
+                        <Border
+          Width="20"
+          Height="20"
+          Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}"
+          CornerRadius="10" />
+                        <TextBlock
+          Margin="10,0,0,0"
+          Text="{Binding Key}" />
+                    </DockPanel>
+                </DataTemplate>
+            </materialDesign:AutoSuggestBox.ItemTemplate>
+        </materialDesign:AutoSuggestBox>
+
+        <Button
+          Grid.Row="3"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Top"
+          Width="250"
+          x:Name="btnContaDiasNiver"
+          Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}"            
+          ToolTip="Calcular dias até o aniversário"
+          Content="Verificador Maioridade"
+          Click="btnIdade_Click"
+        
+      />
+        
+    </Grid>
+</Window>

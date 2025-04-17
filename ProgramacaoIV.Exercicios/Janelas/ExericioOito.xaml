@@ -1,0 +1,11 @@
+﻿<Window x:Class="ProgramacaoIV.Exercicios.Janelas.ExericioOito"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Exercício Oito" Height="200" Width="400">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <DatePicker x:Name="datePicker" Width="200"/>
+            <Button Content="Verificar Dia" Click="OnButtonClick" Width="200"/>
+        </StackPanel>
+    </Grid>
+</Window>

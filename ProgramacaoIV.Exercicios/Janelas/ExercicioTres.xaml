@@ -1,0 +1,52 @@
+﻿<Window x:Class="ProgramacaoIV.Exercicios.Janelas.ExercicioTres"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ExercicioTres" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Selecione sua data de nascimento:" 
+             Grid.Row="0"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Bottom"      
+             FontSize="16"          
+             FontWeight="Bold"
+        />
+        <!-- DatePicker para selecionar a data de nascimento -->
+        <DatePicker
+              Grid.Row="2"
+              x:Name="pegaDataNiver"
+              materialDesign:HintAssist.HelperText="Selecione sua data de nascimento"
+              materialDesign:HintAssist.Hint="Escolha uma data"
+              Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Top"
+
+        />
+
+
+        <!-- Botão para calcular dias restantes -->
+        <Button
+            Grid.Row="3"
+            Width="250"
+            VerticalAlignment="Bottom"
+            x:Name="btnContaDiasNiver"
+            Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}"            
+            ToolTip="Calcular dias até o aniversário"
+            Content="Calcular dias restantes"
+            Click="btnAniversario_Click"
+        />
+    </Grid>
+</Window>
